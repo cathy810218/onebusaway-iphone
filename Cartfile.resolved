@@ -1,4 +1,4 @@
-github "efremidze/Cluster" "1.0.2"
+github "aaronbrethorst/Cluster" "7ba67185e2fb7e2ee4e01193c3e10d6539856e66"
 github "aaronbrethorst/CocoaLumberjack" "845ff8043fb6b902cc0e09d34ecf28bdf6d1cee1"
 github "dzenbot/DZNEmptyDataSet" "v1.8.1"
 github "cbpowell/MarqueeLabel" "3.0.3"

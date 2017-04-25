@@ -98,7 +98,6 @@ static const double kStopsInRegionRefreshDelayOnDrag = 0.1;
 
     self.mostRecentRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0), MKCoordinateSpanMake(0, 0));
 
-    // abxoxo - do this here or in the lazily loading property?
     self.mapDataLoader.delegate = self;
 
     self.mapRegionManager = [[OBAMapRegionManager alloc] initWithMapView:self.mapView];
@@ -353,14 +352,14 @@ static const double kStopsInRegionRefreshDelayOnDrag = 0.1;
     self.doneLoadingMap = YES;
 }
 
-- (void)mapView:(MKMapView *)aMapView didAddAnnotationViews:(NSArray *)views {
-    for (MKAnnotationView *view in views) {
-        if ([view.annotation isKindOfClass:[MKUserLocation class]]) {
-            [view.superview bringSubviewToFront:view];
-            return;
-        }
-    }
-}
+//- (void)mapView:(MKMapView *)aMapView didAddAnnotationViews:(NSArray *)views {
+//    for (MKAnnotationView *view in views) {
+//        if ([view.annotation isKindOfClass:[MKUserLocation class]]) {
+//            [view.superview bringSubviewToFront:view];
+//            return;
+//        }
+//    }
+//}
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
     [self.mapRegionManager mapView:mapView regionWillChangeAnimated:animated];

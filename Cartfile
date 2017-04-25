@@ -55,7 +55,7 @@ github "OneSignal/OneSignal-iOS-SDK" ~>2.5.2
 github "apptentive/apptentive-ios" ~>3.5.0
 
 # https://github.com/efremidze/Cluster/releases
-github "efremidze/Cluster" ~>1.0.2
+github "aaronbrethorst/Cluster" "objc"
 
 ###################
 ##### Testing #####

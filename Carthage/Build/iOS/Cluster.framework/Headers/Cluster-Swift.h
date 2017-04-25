@@ -155,6 +155,17 @@ SWIFT_CLASS("_TtC7Cluster17ClusterAnnotation")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIColor;
+@class UIImage;
+
+SWIFT_CLASS("_TtC7Cluster23ClusterAnnotationConfig")
+@interface ClusterAnnotationConfig : NSObject
+@property (nonatomic, strong) UIColor * _Nonnull color;
+@property (nonatomic) double radius;
+@property (nonatomic, strong) UIImage * _Nullable image;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UILabel;
 @class NSCoder;
 
@@ -162,10 +173,42 @@ SWIFT_CLASS("_TtC7Cluster21ClusterAnnotationView")
 @interface ClusterAnnotationView : MKAnnotationView
 @property (nonatomic, strong) UILabel * _Nonnull countLabel;
 @property (nonatomic, strong) id <MKAnnotation> _Nullable annotation;
+@property (nonatomic, strong) ClusterAnnotationConfig * _Nonnull type;
+/// Initializes and returns a new cluster annotation view.
+/// \param annotation The annotation object to associate with the new view.
+///
+/// \param reuseIdentifier If you plan to reuse the annotation view for similar types of annotations, pass a string to identify it. Although you can pass nil if you do not intend to reuse the view, reusing annotation views is generally recommended.
+///
+/// \param type The cluster annotation type to associate with the new view.
+///
+///
+/// returns:
+/// The initialized cluster annotation view.
+- (nonnull instancetype)initWithAnnotation:(id <MKAnnotation> _Nullable)annotation reuseIdentifier:(NSString * _Nullable)reuseIdentifier type:(ClusterAnnotationConfig * _Nonnull)type;
 - (void)configure;
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithAnnotation:(id <MKAnnotation> _Nullable)annotation reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class MKMapView;
+
+SWIFT_CLASS("_TtC7Cluster14ClusterManager")
+@interface ClusterManager : NSObject
+/// Adds an array of annotation objects to the cluster manager.
+/// \param annotations An array of annotation objects. Each object in the array must conform to the MKAnnotation protocol.
+///
+- (void)add:(NSArray<id <MKAnnotation>> * _Nonnull)annotations;
+/// Removes all the annotation objects from the cluster manager.
+- (void)removeAll;
+/// The complete list of annotations associated.
+/// The objects in this array must adopt the MKAnnotation protocol. If no annotations are associated with the cluster manager, the value of this property is an empty array.
+@property (nonatomic, readonly, copy) NSArray<id <MKAnnotation>> * _Nonnull annotations;
+/// Reload the annotations on the map view.
+/// \param mapView The map view object to reload.
+///
+- (void)reload:(MKMapView * _Nonnull)mapView;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop
