@@ -18,6 +18,7 @@
 @import OBAKit;
 @import Masonry;
 @import SVProgressHUD;
+@import Cluster;
 #import "OBAStopViewController.h"
 #import "OBAAnalytics.h"
 #import "OBAAlerts.h"
@@ -63,6 +64,7 @@ static const double kStopsInRegionRefreshDelayOnDrag = 0.1;
 @property(nonatomic,strong) NSTimer *refreshTimer;
 @property(nonatomic,strong) OBAMapRegionManager *mapRegionManager;
 @property(nonatomic,strong) OBAMapDataLoader *mapDataLoader;
+@property(nonatomic,strong) ClusterManager *clusterManager;
 @end
 
 @implementation OBAMapViewController

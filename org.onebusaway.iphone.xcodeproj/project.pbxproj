@@ -186,6 +186,7 @@
 		938B84381D868A0500DB0AF0 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938B84331D868A0500DB0AF0 /* SVProgressHUD.framework */; };
 		93A6E5241E6CB23500BEFECE /* ISHHoverBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A6E5231E6CB23500BEFECE /* ISHHoverBar.m */; };
 		93A923A21C21DCD600A657C8 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A923A11C21DCD600A657C8 /* SafariServices.framework */; };
+		93AA04641EAEC34300562171 /* Cluster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AA04631EAEC34300562171 /* Cluster.framework */; };
 		93ADC51B1DCB1EBE0024FBD6 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 93ADC51A1DCB1EBE0024FBD6 /* credits.html */; };
 		93B781AD1E64BAC900F2C38D /* OBAMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B781AA1E64BAC900F2C38D /* OBAMapViewController.m */; };
 		93B781B21E64BB2800F2C38D /* OBAMapDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B781B11E64BB2800F2C38D /* OBAMapDataLoader.m */; };
@@ -537,6 +538,7 @@
 		93A6E5221E6CB23500BEFECE /* ISHHoverBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHHoverBar.h; sourceTree = "<group>"; };
 		93A6E5231E6CB23500BEFECE /* ISHHoverBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHHoverBar.m; sourceTree = "<group>"; };
 		93A923A11C21DCD600A657C8 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		93AA04631EAEC34300562171 /* Cluster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cluster.framework; path = Carthage/Build/iOS/Cluster.framework; sourceTree = "<group>"; };
 		93ADC51A1DCB1EBE0024FBD6 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = credits.html; path = OneBusAway/credits.html; sourceTree = SOURCE_ROOT; };
 		93B781A91E64BAC900F2C38D /* OBAMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBAMapViewController.h; sourceTree = "<group>"; };
 		93B781AA1E64BAC900F2C38D /* OBAMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBAMapViewController.m; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 				932CCEC71DC3D2DB001C8405 /* PMKMapKit.framework in Frameworks */,
 				932CCEC31DC3D2DB001C8405 /* CocoaLumberjack.framework in Frameworks */,
 				93BBB3F91DB4B3C100694940 /* OBAKit.framework in Frameworks */,
+				93AA04641EAEC34300562171 /* Cluster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +656,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93AA04631EAEC34300562171 /* Cluster.framework */,
 				93F3F8961E7AEE560025FC78 /* Mantle.framework */,
 				930653DC1E6F83F0005AF0C9 /* Apptentive.framework */,
 				93BB1EE01E300526008A88BA /* Fabric.framework */,
@@ -1676,6 +1680,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/OneSignal.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Apptentive.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mantle.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cluster.framework",
 			);
 			name = "Carthage Integration";
 			outputPaths = (
