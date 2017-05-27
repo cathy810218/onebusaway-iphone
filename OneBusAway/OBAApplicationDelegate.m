@@ -144,6 +144,17 @@ static NSString * const OBALastRegionRefreshDateUserDefaultsKey = @"OBALastRegio
     return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[Apptentive shared] setPushNotificationIntegration:ApptentivePushProviderApptentive withDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    BOOL handledByApptentive = [[Apptentive shared] didReceiveRemoteNotification:userInfo fromViewController:self.window.rootViewController fetchCompletionHandler:completionHandler];
+    if (!handledByApptentive) {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
+}
+
 - (BOOL)hasEnoughTimeElapsedToRefreshRegions {
     NSDate *lastRefresh = [[NSUserDefaults standardUserDefaults] objectForKey:OBALastRegionRefreshDateUserDefaultsKey];
 
